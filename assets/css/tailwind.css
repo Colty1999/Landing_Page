@@ -1,16 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-    @apply bg-gray-50;
-}
+@layer base {
+    :root {
+        --primary: #F9F7F7;
+        --secondary: #3F72AF;
+        --tertiary: #112D4E;
+        --primary-text: #112D4E;
+        --secondary-text: #fff;
+        --background: #DBE2EF;
+    }
+    
+    [data-theme="dark"] {
+        --primary: #222831;
+        --secondary: #393E46;
+        --tertiary: #00ADB5;
+        --primary-text: #EEEEEE;
+        --secondary-text: #112D4E;
+        --background: #393E46;
+    }
+
+    html {
+      /* font-family: "Proxima Nova", system-ui, sans-serif; */
+      /* font-family: "Consolas", monospace; */
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        @apply bg-gray-200;
+    }
+  }
 
 @layer components {
-    .btn {
+    /* .btn {
         @apply bg-[#12b448] text-white px-4 py-2 rounded-md text-sm text-white;
     }
     .card {
         @apply p-3 bg-white rounded-md shadow-md h-full;
-    }
+    } */
 }
