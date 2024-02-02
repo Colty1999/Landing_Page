@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-7 max-w-sm mx-auto text-start">
+    <div class="mt-7 max-w-sm mx-auto text-start text-primary-text">
         <p class="flex gap-6 items-end">
             <span class="mt-7 text-6xl font-bold">{{ error.statusCode }}</span>
             <span class="mt-7 text-5xl">Ooops.</span>

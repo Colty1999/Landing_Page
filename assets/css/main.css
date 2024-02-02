@@ -1,0 +1,74 @@
+:root {
+  --primary: #f9f7f7;
+  --secondary: #3f72af;
+  --tertiary: #112d4e;
+  --primary-text: #112d4e;
+  --secondary-text: #fff;
+  --background: #dbe2ef;
+}
+
+[data-theme="dark"] {
+  --primary: #222831;
+  --secondary: #393e46;
+  --tertiary: #00adb5;
+  --primary-text: #eeeeee;
+  --secondary-text: #112d4e;
+  --background: #393e46;
+}
+
+html {
+  /* font-family: "Proxima Nova", system-ui, sans-serif; */
+  /* font-family: "Consolas", monospace; */
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+html:before {
+  content: "";
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 45dvh 45dvw;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  opacity: 0.5;
+}
+
+/* body {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+} */
+
+body:before {
+  content: "";
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 40dvh 40dvw;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  opacity: 0.5;
+}
+
+body:after {
+  content: "";
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 35dvh 35dvw;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  opacity: 0.5;
+}
+
+.w-inherit {
+  width: inherit;
+}

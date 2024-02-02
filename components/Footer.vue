@@ -1,5 +1,5 @@
 <template>
-    <footer class="fixed z-100 bottom-0 w-full px-[10%] h-12 text-primary-text tracking-wider">
+    <footer class="fixed z-100 w-4/5 max-w-xxl bottom-0 h-12 text-primary-text tracking-wider flex justify-between items-center">
       <div class="flex justify-start">
         <div class="flex gap-1 items-center">
           <a href="https://github.com/Colty1999" target="_blank" rel="noopener noreferrer"
@@ -21,5 +21,8 @@
           <span class="ml-2">| Created by Mateusz Gietka</span> <!-- Adjusted margin here -->
         </div>
       </div>
+      <diiv>
+        <span class="text-xs">TODO theme switch</span>
+      </diiv>
     </footer>
 </template>
