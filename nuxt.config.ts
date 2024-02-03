@@ -23,7 +23,8 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxt/ui',
+    '@nuxtjs/tailwindcss',
   ],
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',

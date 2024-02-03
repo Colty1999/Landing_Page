@@ -6,7 +6,6 @@ export default {
       colors: {
         'primary': 'var(--primary)',
         'secondary': 'var(--secondary)',
-        'tertiary': 'var(--tertiary)',
         'primary-text': 'var(--primary-text)',
         'secondary-text': 'var(--secondary-text)',
         'background': 'var(--background)',
