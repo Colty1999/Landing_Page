@@ -36,6 +36,7 @@ html:before {
 
 body {
   background-color: var(--background);
+  transition: all 0.2s ease-out;
 }
 
 body:before {

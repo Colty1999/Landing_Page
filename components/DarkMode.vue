@@ -1,6 +1,4 @@
 <template>
-  <div class="flex items-center gap-1">
-    Change theme |
     <UToggle
       on-icon="i-heroicons-sun-20-solid"
       off-icon="i-heroicons-moon-20-solid"
@@ -8,17 +6,24 @@
       @update:model-value="handleToggle"
       color="gray"
     />
-  </div>
 </template>
 
 <script lang="ts">
 export default {
   setup() {
     const getInitialTheme = () => {
-      if (typeof window !== "undefined" && window.localStorage) {
-        return window.localStorage.getItem("themeKey") === "dark";
+      if (typeof window !== "undefined") {
+        const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (window.localStorage) {
+          const localStorageTheme = window.localStorage.getItem("themeKey");
+          if (localStorageTheme) {
+            return localStorageTheme === "dark";
+          }
+        }
+        return prefersDarkMode;
       }
-      return false; // Default theme is light if localStorage is not available
+      return false;
     };
 
     const isDarkMode = ref(getInitialTheme());

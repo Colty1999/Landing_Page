@@ -1,10 +1,17 @@
 <template>
   <footer
-    class="fixed z-100 w-full max-w-xxl bottom-0 h-12 text-primary-text tracking-wider flex justify-center"
+    class="
+    fixed z-100 w-full bottom-0 h-12
+    text-primary-text tracking-wider 
+    flex justify-center items-center"
   >
-  <div class="w-4/5 max-w-xxl h-16 flex justify-between items-center">
-    <div class="flex justify-start">
-      <div class="flex gap-1 items-center">
+  <div class="
+  w-[calc(100%-3rem)] md:w-4/5 max-w-xxl h-12
+  flex 
+  justify-center md:justify-between gap-2
+  text-sm md:text-base
+  ">
+    <div class="flex justify-center md:justify-start items-center gap-1">
         <a
           href="https://github.com/Colty1999"
           target="_blank"
@@ -35,11 +42,15 @@
             class="absolute top-0 left-0 w-full h-full bg-green-500 z-0 transform -translate-x-full transition duration-300 ease-in-out group-hover:translate-x-0"
           ></span>
         </a>
-        <span class="ml-2">| Created by Mateusz Gietka</span>
+        <span>| Created by Mateusz Gietka</span>
         <!-- Adjusted margin here -->
-      </div>
     </div>
+    <div class="flex 
+    justify-center md:justify-end 
+    items-center gap-2">
+    <p class="hidden md:flex">Change theme </p>|
     <DarkMode />
+    </div>
   </div>
   </footer>
 </template>
