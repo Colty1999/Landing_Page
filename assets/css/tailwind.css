@@ -10,17 +10,20 @@
   } */
 
   html:before {
-    @apply border-transparent sm:border-b-green-500;
+    @apply border-transparent md:border-b-green-500;
   }
 
   body:before {
-    @apply border-transparent sm:border-b-green-500;
+    @apply border-transparent md:border-b-green-500;
   }
 
   body:after {
-    @apply border-transparent sm:border-b-green-500;
+    @apply border-transparent md:border-b-green-500;
   }
-  /* TODO */
+  
+  .router-link-exact-active {
+    @apply text-green-500;
+  }
 }
 
 @layer components {

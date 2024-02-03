@@ -25,6 +25,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxtjs/tailwindcss',
+    '@formkit/auto-animate/nuxt',
   ],
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',

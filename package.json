@@ -19,6 +19,7 @@
     "vue-tsc": "^1.8.27"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",

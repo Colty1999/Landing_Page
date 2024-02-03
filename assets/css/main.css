@@ -30,7 +30,7 @@ html:before {
   border-width: 0 0 45dvh 45dvw;
   right: 0;
   bottom: 0;
-  position: absolute;
+  position: fixed;
   opacity: 0.5;
 }
 
@@ -47,7 +47,7 @@ body:before {
   border-width: 0 0 40dvh 40dvw;
   right: 0;
   bottom: 0;
-  position: absolute;
+  position: fixed;
   opacity: 0.5;
 }
 
@@ -60,7 +60,7 @@ body:after {
   border-width: 0 0 35dvh 35dvw;
   right: 0;
   bottom: 0;
-  position: absolute;
+  position: fixed;
   opacity: 0.5;
 }
 

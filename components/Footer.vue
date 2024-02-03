@@ -1,7 +1,8 @@
 <template>
   <footer
-    class="fixed z-100 w-4/5 max-w-xxl bottom-0 h-12 text-primary-text tracking-wider flex justify-between items-center"
+    class="fixed z-100 w-full max-w-xxl bottom-0 h-12 text-primary-text tracking-wider flex justify-center"
   >
+  <div class="w-4/5 max-w-xxl h-16 flex justify-between items-center">
     <div class="flex justify-start">
       <div class="flex gap-1 items-center">
         <a
@@ -38,44 +39,7 @@
         <!-- Adjusted margin here -->
       </div>
     </div>
-    <div class="flex items-center gap-1">
-      Change theme |
-    <UToggle
-      on-icon="i-heroicons-sun-20-solid"
-      off-icon="i-heroicons-moon-20-solid"
-      :model-value="isDarkMode"
-      @update:model-value="handleToggle"
-      color="gray"
-    />
+    <DarkMode />
   </div>
   </footer>
 </template>
-
-<script lang="ts">
-export default {
-  setup() {
-    const getInitialTheme = () => {
-      if (typeof window !== "undefined" && window.localStorage) {
-        return window.localStorage.getItem("themeKey") === "dark";
-      }
-      return false; // Default theme is light if localStorage is not available
-    };
-
-    const isDarkMode = ref(getInitialTheme());
-
-    const handleToggle = (value: any) => {
-      isDarkMode.value = value;
-      const newTheme = value ? "dark" : "light";
-      document.documentElement.setAttribute("data-theme", newTheme);
-      if (window.localStorage) {
-        window.localStorage.setItem("themeKey", newTheme);
-      }
-    };
-
-    return {
-      isDarkMode,
-      handleToggle,
-    };
-  },
-};
-</script>
