@@ -1,9 +1,10 @@
 <template>
   <div>
-    <Header />
-    <div class="w-full md:w-4/5 max-w-xxl mx-auto pt-16">
+
+    <div class="w-full md:w-4/5 max-w-xxl mx-auto">
       <slot />
     </div>
+    <Header />
     <Footer />
     <!-- <div class="
     absolute z-[-1] 

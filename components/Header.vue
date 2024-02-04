@@ -1,12 +1,11 @@
 <template>
   <header
-    class="fixed z-100 w-full bg-green-500 md:bg-transparent h-16 flex justify-center"
+    class="fixed top-0 z-100 w-full bg-green-500 md:bg-transparent h-16 flex justify-center"
   >
     <nav
       class="relative w-full md:w-4/5 max-w-xxl h-16 text-primary-text text-xl tracking-wide font-bold flex justify-between items-center"
     >
-    <!-- w-[calc(100%-3rem)] -->
-      <NuxtLink to="/" class="text-2xl relative inline-block group ml-5"
+      <NuxtLink to="/" class="text-2xl relative inline-block group ml-5 md:ml-0"
         >M.Gietka
         <span
           class="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
@@ -21,18 +20,24 @@
         </button>
       </div>
       <ul
-        class="absolute top-16 left-0 md:static flex flex-col md:flex-row w-full md:w-auto md:gap-5"
+        class="absolute top-16 left-0 md:static flex flex-col md:flex-row md:items-center w-full h-full md:w-auto md:gap-5"
       >
+      <button 
+        class="absolute top-0 left-0 md:hidden h-dvh w-full delay-0"
+        :class="[isExpanded ? 'block' : 'hidden']"
+        @click="handleNavExpand"
+        />
         <li v-for="(link, index) in links" :key="index">
           <NuxtLink
             :to="link.to"
-            class="flex justify-center items-center w-full md:w-auto py-4 md:relative inline-block group 
-            bg-green-500 bg-opacity-20 md:bg-transparent
-            border-b-2 border-green-400 md:border-none
-            transition-all ease-in-out delay-300
-            md:translate-y-0"
-            :class="{ 'transform translate-y-[-50dvh]': !isExpanded }"
-            :style="{ 'transition-delay': `calc(0.1s * ${isExpanded ? index : links.length - index})` }"
+            class="flex justify-center items-center w-full md:w-auto py-6 md:py-0 md:relative inline-block group border-b-2 border-green-400 md:border-none transition-all ease-in-out bg-background
+            md:scale-100"
+            :class="[isExpanded ? 'scale-100' : 'scale-0']"
+            :style="{
+              'transition-delay': `calc(0.05s * ${
+                isExpanded ? index : links.length - index
+              })`,
+            }"
           >
             {{ link.name }}
             <span
@@ -68,13 +73,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@for $i from 1 through 6 {
-  .transitionDelay li:nth-child(#{$i}n) {
-    animation-delay: #{$i * 0.5}s;
-  }
-}
-</style>
 <!-- <template>
   <header>
     <nav class="fixed z-100 w-4/5 max-w-xxl text-primary-text text-xl tracking-wide font-bold flex justify-between items-center h-16">
