@@ -8,39 +8,37 @@
     />
 </template>
 
-<script lang="ts">
-export default {
-  setup() {
-    const getInitialTheme = () => {
-      if (typeof window !== "undefined") {
-        const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+<script setup lang="ts">
+const isDarkMode = ref(false);
 
-        if (window.localStorage) {
-          const localStorageTheme = window.localStorage.getItem("themeKey");
-          if (localStorageTheme) {
-            return localStorageTheme === "dark";
-          }
-        }
-        return prefersDarkMode;
-      }
-      return false;
-    };
+const setTheme = (value: boolean) => {
+  const newTheme = value ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', newTheme);
 
-    const isDarkMode = ref(getInitialTheme());
-
-    const handleToggle = (value: any) => {
-      isDarkMode.value = value;
-      const newTheme = value ? "dark" : "light";
-      document.documentElement.setAttribute("data-theme", newTheme);
-      if (window.localStorage) {
-        window.localStorage.setItem("themeKey", newTheme);
-      }
-    };
-
-    return {
-      isDarkMode,
-      handleToggle,
-    };
-  },
+  if (typeof window !== 'undefined' && window.localStorage) {
+    window.localStorage.setItem('themeKey', newTheme);
+  }
 };
+
+const getInitialTheme = () => {
+  if (typeof window !== 'undefined' && window.localStorage) {
+    const localStorageTheme = window.localStorage.getItem('themeKey');
+    if (localStorageTheme) {
+      isDarkMode.value = localStorageTheme === 'dark';
+    } else {
+      const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      isDarkMode.value = prefersDarkMode;
+    }
+  }
+};
+
+const handleToggle = (value: boolean) => {
+  isDarkMode.value = value;
+  setTheme(value);
+};
+
+onMounted(() => {
+  getInitialTheme();
+  setTheme(isDarkMode.value);
+});
 </script>

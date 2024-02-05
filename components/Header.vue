@@ -5,6 +5,8 @@
     <nav
       class="relative w-full md:w-4/5 max-w-xxl h-16 text-primary-text text-xl tracking-wide font-bold flex justify-between items-center"
     >
+    <!-- backdrop-blur-lg
+    style="mask: linear-gradient(black, black,  transparent);" -->
       <NuxtLink to="/" class="text-2xl relative inline-block group ml-5 md:ml-0"
         >M.Gietka
         <span
@@ -30,8 +32,11 @@
         <li v-for="(link, index) in links" :key="index">
           <NuxtLink
             :to="link.to"
-            class="flex justify-center items-center w-full md:w-auto py-6 md:py-0 md:relative inline-block group border-b-2 border-green-400 md:border-none transition-all ease-in-out bg-background
-            md:scale-100"
+            class="flex justify-center items-center w-full md:w-auto py-6 md:py-0 inline-block md:relative   border-b-2 border-green-400 md:border-none
+            bg-background md:bg-transparent
+            transition-all ease-in-out 
+            md:scale-100
+            group"
             :class="[isExpanded ? 'scale-100' : 'scale-0']"
             :style="{
               'transition-delay': `calc(0.05s * ${
