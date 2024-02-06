@@ -26,4 +26,28 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", calculateScrollPercentage);
 });
+
+// const scrolledPercentage = ref(0);
+
+// const calculateScrollPercentage = () => {
+//   const container = document.querySelector('.scroll-container');
+//   if (container) {
+//     const scrollHeight = container.scrollHeight - container.clientHeight;
+//     scrolledPercentage.value = (container.scrollTop / scrollHeight) * 100;
+//   }
+// };
+
+// const handleWheel = () => {
+//   requestAnimationFrame(calculateScrollPercentage);
+//   console.log(scrolledPercentage.value);
+// };
+
+// onMounted(() => {
+//   calculateScrollPercentage();
+//   window.addEventListener('wheel', handleWheel);
+// });
+
+// onBeforeUnmount(() => {
+//   window.removeEventListener('wheel', handleWheel);
+// });
 </script>

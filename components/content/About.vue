@@ -36,9 +36,19 @@
     <div
       class="flex justify-center items-center md:col-span-2 md:row-span-1 text-4xl"
     >
-      <button class="hover:scale-[1.2] transition-all duration-300 ease-in-out">
-        <font-awesome-icon :icon="['fas', 'chevron-down']" />
-      </button>
+    <button class="relative group hover:scale-[1.2] transition-all duration-300 ease-in-out">
+    <font-awesome-icon :icon="['fas', 'chevron-down']" class="text-current" />
+
+    <!-- Smaller icon, initially hidden behind the main icon -->
+    <font-awesome-icon
+    :icon="['fas', 'chevron-down']"
+      class="text-green-500 absolute top-1/2 group-hover:top-[35%] left-1/2 group-hover:scale-[0.7] group-hover:delay-75 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-50"
+    />
+    <font-awesome-icon
+    :icon="['fas', 'chevron-down']"
+      class="text-green-500 absolute top-1/2 group-hover:top-[25%] left-1/2 group-hover:scale-[0.5] group-hover:delay-150 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-50"
+    />
+  </button>
     </div>
   </div>
 </template>
